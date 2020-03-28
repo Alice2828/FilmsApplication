@@ -46,10 +46,10 @@ class MoviesAdapter(
             val vote=post?.vote_average
             userrating.text =vote.toString()
 
-            Glide.with(view.context)
-                .load(post?.poster_path)
-//                .placeholder(R.drawable.load)
-                .into(thumbnail);
+            Glide.with(context)
+                .load(post?.getPosterPath())
+                .into(thumbnail)
+            //                .placeholder(R.drawable.load)
 
             view.setOnClickListener {
                 val intent= Intent(view.context,DetailActivity::class.java)

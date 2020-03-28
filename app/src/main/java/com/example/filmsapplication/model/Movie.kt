@@ -32,4 +32,10 @@ data class Movie(
     val overview: String,
     @SerializedName("release_date")
     val release_date: String
-)
+) {
+    val baseImageUrl: String = "https://image.tmdb.org/t/p/w500"
+
+    fun getPosterPath(): String {
+        return "https://image.tmdb.org/t/p/w500" + poster_path
+    }
+}
