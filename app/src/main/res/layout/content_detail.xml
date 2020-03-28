@@ -45,13 +45,23 @@
                 android:id="@+id/plot"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/plot"
+                android:layout_below="@+id/title"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/plot"
                 android:textAlignment="center"
                 android:textSize="25sp"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/plotsynopsis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/plot"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/rating"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/rating"
