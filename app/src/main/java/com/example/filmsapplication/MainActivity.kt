@@ -3,8 +3,6 @@ package com.example.filmsapplication
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
 import android.widget.Toast
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
@@ -14,7 +12,6 @@ import com.example.filmsapplication.adapter.MoviesAdapter
 import com.example.filmsapplication.api.RetrofitService
 import com.example.filmsapplication.model.Movie
 import com.example.filmsapplication.model.MovieResponse
-import kotlinx.android.synthetic.main.activity_main.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -51,7 +48,7 @@ class MainActivity : AppCompatActivity() {
 
         movieList = ArrayList<Movie>()
         postAdapter = MoviesAdapter(this,movieList)
-        recyclerView.layoutManager = GridLayoutManager(this, 1)
+        recyclerView.layoutManager = GridLayoutManager(this, 2)
         recyclerView.itemAnimator=DefaultItemAnimator()
         recyclerView.adapter = postAdapter
         postAdapter?.notifyDataSetChanged()
@@ -88,18 +85,6 @@ class MainActivity : AppCompatActivity() {
 
         } catch (e: Exception) {
             Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT)
-        }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_bt,menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
-            R.id.profile -> return true;
-            else -> return super.onOptionsItemSelected(item)
         }
     }
 }
